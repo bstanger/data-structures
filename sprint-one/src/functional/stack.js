@@ -4,8 +4,6 @@ var Stack = function() {
   someInstance.sizeCount = 0;
 
   // Use an object with numeric keys to store values
-  var storage = {};
-
   var inputObj = {};
 
   // Implement the methods below
