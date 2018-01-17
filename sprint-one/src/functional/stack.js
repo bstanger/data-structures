@@ -6,9 +6,28 @@ var Stack = function() {
   // Use an object with numeric keys to store values
   var inputObj = {};
 
+  var newInputObj = function(value){
+    var output = new Object();
+    output.value = value;
+    output.previous = null;
+    return output;
+  };
+
   // Implement the methods below
   someInstance.push = function(value) {
-    inputObj.value = value;
+    // var inputObj = new Object();
+    // Object.defineProperty(inputObj, 'value', {
+    //   value: value
+    // });
+    // Object.defineProperty(inputObj, 'previous', {
+    //   value: null
+    // });
+
+    var inputObj = new newInputObj(value);
+
+    // inputObj.value = value;
+    // inputObj.previous = null;
+
     inputObj.previous = someInstance.top;
     someInstance.top = inputObj;
     someInstance.sizeCount++;
