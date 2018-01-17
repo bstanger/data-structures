@@ -2,7 +2,6 @@ var Queue = function() {
   var someInstance = {};
   someInstance.sizeCount = 0;
   someInstance.firstIdx = 0;
-  someInstance.lastIdx = null;
 
   // Use an object with numeric keys to store values
   var storage = {};
@@ -19,12 +18,9 @@ var Queue = function() {
   someInstance.enqueue = function(value) {
     var freshItem = new QueueItem(value);
     freshItem.previous = someInstance.last;
-    console.log(freshItem);
     storage[index] = freshItem;
-    someInstance.lastIdx = index;
-    index++;
-    console.log(storage);
 
+    index++;
     someInstance.sizeCount++;
 
     return; // Something else?
@@ -33,8 +29,11 @@ var Queue = function() {
   someInstance.dequeue = function() {
     if(!someInstance.sizeCount) return;
     var firstInQueue = storage[someInstance.firstIdx].value;
-    someInstance.firstIdx = someInstance.firstIdx + 1;
+    delete storage[someInstance.firstIdx];
+
+    someInstance.firstIdx++;
     someInstance.sizeCount--;
+    
     return firstInQueue;
   };
 
