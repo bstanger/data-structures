@@ -13,21 +13,8 @@ var Stack = function() {
     return output;
   };
 
-  // Implement the methods below
   someInstance.push = function(value) {
-    // var inputObj = new Object();
-    // Object.defineProperty(inputObj, 'value', {
-    //   value: value
-    // });
-    // Object.defineProperty(inputObj, 'previous', {
-    //   value: null
-    // });
-
     var inputObj = new newInputObj(value);
-
-    // inputObj.value = value;
-    // inputObj.previous = null;
-
     inputObj.previous = someInstance.top;
     someInstance.top = inputObj;
     someInstance.sizeCount++;
