@@ -4,22 +4,28 @@ var Stack = function() {
   // Use an object with numeric keys to store values
   var storage = {};
   var sizeCount = 0;
+  someInstance.top = null;
+
+  var inputObj = {};
 
   // Implement the methods below
   someInstance.push = function(value) {
-    sizeCount++;
-    storage[0] = value;
-    // Need adjust all others in storage
-    
+    inputObj.value = value;
+    inputObj.previous = someInstance.top;
+    someInstance.top = inputObj;
+
     // var nextValue;
     // for (var idxKeys in storage){
-    //   console.log('looking at index ' , idxKeys);
-    //   console.log('with value ' , storage[idxKeys]);
-    //   nextValue = storage[idxKeys++];
-    //   console.log('nextValue ' , nextValue);
-    //   storage[idxKeys++] = storage[idxKeys];
-    //   console.log('updated value ' , storage[idxKeys]);
+
+    //   var nextIdx = parseInt(idxKeys) + 1;
+    //   nextValue = storage[nextIdx];
+    //   var currentValue = storage[idxKeys];
+
+    //   debugger;
+
+    //   storage[nextIdx] = currentValue;
     // }
+    sizeCount++;
     return sizeCount;
   };
 
