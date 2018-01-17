@@ -1,10 +1,10 @@
 var Stack = function() {
   var someInstance = {};
+  someInstance.top = null;
 
   // Use an object with numeric keys to store values
   var storage = {};
   var sizeCount = 0;
-  someInstance.top = null;
 
   var inputObj = {};
 
@@ -13,29 +13,16 @@ var Stack = function() {
     inputObj.value = value;
     inputObj.previous = someInstance.top;
     someInstance.top = inputObj;
-
-    // var nextValue;
-    // for (var idxKeys in storage){
-
-    //   var nextIdx = parseInt(idxKeys) + 1;
-    //   nextValue = storage[nextIdx];
-    //   var currentValue = storage[idxKeys];
-
-    //   debugger;
-
-    //   storage[nextIdx] = currentValue;
-    // }
     sizeCount++;
     return sizeCount;
   };
 
   someInstance.pop = function() {
     if(!sizeCount) return;
-    var valuePopped = storage[0];
-    delete storage[0];
+    var removed = someInstance.top.value;
+    someInstance.top = someInstance.top.previous;
     sizeCount--;
-    // Need adjust all others in storage
-    return valuePopped;
+    return removed;
   };
 
   someInstance.size = function() {
