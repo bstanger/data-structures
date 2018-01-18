@@ -9,14 +9,14 @@ var Stack = function() {
   var index = 0;
 
   var newInputObj = function(value){
-    var output = new Object();
+    var output = {};
     output.value = value;
     output.previousIdx = null;
     return output;
   };
 
   someInstance.push = function(value) {
-    var inputObj = new newInputObj(value);
+    var inputObj = newInputObj(value);
     inputObj.previousIdx = someInstance.topIdx;
     someInstance.topIdx = index;
 

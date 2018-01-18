@@ -15,7 +15,7 @@ var Queue = function() {
   }
 
   someInstance.enqueue = function(value) {
-    var freshItem = new QueueItem(value);
+    var freshItem = QueueItem(value);
     storage[index] = freshItem;
 
     index++;
