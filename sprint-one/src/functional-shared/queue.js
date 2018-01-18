@@ -3,7 +3,7 @@ var Queue = function() {
   // but try not not reference your old code in writing the new style.
   var currentQueue = {};
   currentQueue.sizeCount = 0;
-  extend(currentQueue, queueMethods);
+  _.extend(currentQueue, queueMethods);
 
   return currentQueue;
 
@@ -21,12 +21,6 @@ var queueMethods = {
 		return this.sizeCount;
 	}
 
-};
-
-var extend = function(obj, methods){
-	for (var key in methods) {
-		obj[key] = methods[key];
-	}
 };
 
 
