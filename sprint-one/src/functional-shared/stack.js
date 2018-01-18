@@ -4,7 +4,7 @@ var Stack = function() {
 
   var currentStack = {
   	sizeCount: 0, 
-  	topIdx: -1,
+  	topIdx: -1, // Might not work for last item popped?
   	storage: {},
   	index: 0
   };
@@ -14,6 +14,7 @@ var Stack = function() {
   return currentStack;
 };
 
+// Not clear to me why this isn't Stack.methods like in the slides, but then it fails
 var stackMethods = {
 
 	newInputObj: function(value){

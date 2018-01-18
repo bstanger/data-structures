@@ -1,6 +1,6 @@
 var Stack = function() {
   var someInstance = {};
-  someInstance.topIdx = -1;
+  someInstance.topIdx = -1; // Might not work for last item popped?
   someInstance.sizeCount = 0;
 
   // Use an object with numeric keys to store values
