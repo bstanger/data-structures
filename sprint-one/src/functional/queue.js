@@ -11,13 +11,11 @@ var Queue = function() {
   var QueueItem = function(value){
     var itemObject = {};
     itemObject.value = value;
-    itemObject.previous = null;
     return itemObject;
   }
 
   someInstance.enqueue = function(value) {
     var freshItem = new QueueItem(value);
-    freshItem.previous = someInstance.last;
     storage[index] = freshItem;
 
     index++;
@@ -33,7 +31,7 @@ var Queue = function() {
 
     someInstance.firstIdx++;
     someInstance.sizeCount--;
-    
+
     return firstInQueue;
   };
 
